@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Button, { buttonVariants } from "./ui/Button";
-import { Eye, Share2 } from "lucide-react";
+import { Eye, LogOut, Share2 } from "lucide-react";
+import { signOut } from "next-auth/react";
 
 export default function Navbar() {
   return (
@@ -29,6 +32,17 @@ export default function Navbar() {
           <Eye className="sm:hidden w-4 h-4" />{" "}
           <span className="hidden sm:block">Result</span>
         </Link>
+        <Button
+          onClick={() => {
+            signOut({
+              callbackUrl: `/auth`,
+            });
+          }}
+          className="flex items-center gap-2 sm:h-auto sm:px-4"
+        >
+          <LogOut className="w-4 h-4" />{" "}
+          <span className="hidden sm:block">Log out</span>
+        </Button>
       </div>
     </nav>
   );
