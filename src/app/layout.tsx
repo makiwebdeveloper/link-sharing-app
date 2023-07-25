@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("h-screen bg-slate-100 p-5", inter.className)}>
         <Navbar />
-        <div className="h-[calc(100vh-140px)]">{children}</div>
+        <div className="sm:h-[calc(100vh-140px)]">{children}</div>
       </body>
     </html>
   );
