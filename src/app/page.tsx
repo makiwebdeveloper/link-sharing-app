@@ -1,9 +1,11 @@
-import Image from "next/image";
+import Editor from "@/components/Editor";
+import Preview from "@/components/Preview";
 
 export default function Home() {
   return (
-    <main>
-      <h1 className="text-3xl">Home</h1>
+    <main className="flex gap-5 mt-5 h-full">
+      <Preview />
+      <Editor />
     </main>
   );
 }

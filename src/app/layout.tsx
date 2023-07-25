@@ -1,3 +1,5 @@
+import Navbar from "@/components/Navbar";
+import { cn } from "@/lib/cn";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -16,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn("h-screen bg-slate-100 p-5", inter.className)}>
+        <Navbar />
+        <div className="h-[calc(100vh-140px)]">{children}</div>
+      </body>
     </html>
   );
 }
